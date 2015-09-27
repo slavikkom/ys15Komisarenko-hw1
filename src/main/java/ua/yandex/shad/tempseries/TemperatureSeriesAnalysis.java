@@ -94,10 +94,10 @@ public class TemperatureSeriesAnalysis {
     }
     
 	final static class TempSummaryStatistics{
-		private double avgTemp = average();
-		private double devTemp = deviation();
-		private double minTemp = min();
-		private double maxTemp = max();
+		private double avgTemp;
+		private double devTemp;
+		private double minTemp;
+		private double maxTemp;
 	}
 	
     public TempSummaryStatistics summaryStatistics(){
@@ -105,19 +105,19 @@ public class TemperatureSeriesAnalysis {
 		if(temps.length == 0) { 
 			throw new IllegalArgumentException();
 		}
-		/*summaryStat.avgTemp = average();
+		summaryStat.avgTemp = average();
 		summaryStat.devTemp = deviation();
 		summaryStat.minTemp = min();
-		summaryStat.maxTemp = max();*/
+		summaryStat.maxTemp = max();
         return summaryStat;
     }
     
     public int addTemps(double ... temperatures){
 		double []tmp = new double [temps.length + temperatures.length];
-		for(int i = 0; i<temps.length; i++) {
+		for(int i = 0; i < temps.length; i++) {
 			tmp[i] = temps[i];
 		}
-		for(int i = 0; i<temperatures.length; i++) {
+		for(int i = 0; i < temperatures.length; i++) {
 			tmp[temps.length + i] = temperatures[i];
 		}
 		temps = tmp;
