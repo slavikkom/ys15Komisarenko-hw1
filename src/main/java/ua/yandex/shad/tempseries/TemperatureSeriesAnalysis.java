@@ -4,7 +4,7 @@ public class TemperatureSeriesAnalysis {
     private static final double BOTTOMTEMP = -273.15;
     private double []temps;
     public TemperatureSeriesAnalysis() {
-		temps = new double[0];
+        temps = new double[0];
     }
     
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
@@ -67,7 +67,8 @@ public class TemperatureSeriesAnalysis {
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(closestTotempValue - temps[i]) < minimum) {
 				closestTotempValue = temps[i];
-				minimum = Math.abs(closestTotempValue - temps[i]);
+				minimum = 
+				Math.abs(closestTotempValue - temps[i]);
 			}
 		}	
 		return closestTotempValue;
@@ -109,7 +110,7 @@ public class TemperatureSeriesAnalysis {
         return tempGreaterThen;
     }
     
-	static final class TempSummaryStatistics{
+	static final class TempSummaryStatistics {
 		private double avgTemp;
 		private double devTemp;
 		private double minTemp;
