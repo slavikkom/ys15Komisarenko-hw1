@@ -12,7 +12,7 @@ public class TemperatureSeriesAnalysis {
         for (int i = 0; i < temperatureSeries.length; i++) {
             temps[i] = temperatureSeries[i];
 			if (temps[i] < BOTTOMTEMP) {
-				throw new  InputMismatchException();
+				throw new InputMismatchException();
 			}
 		}	
     }
