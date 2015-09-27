@@ -1,7 +1,7 @@
 package ua.yandex.shad.tempseries;
 
 public class TemperatureSeriesAnalysis {    
-    private static final double BottomTemp = -273.15;
+    private static final double BOTTOMTEMP = -273.15;
     private double []temps;
     public TemperatureSeriesAnalysis() {
 		temps = new double[0];
@@ -26,13 +26,13 @@ public class TemperatureSeriesAnalysis {
 		double averagesqrTemp = 0;
 		
 		for (int i = 0; i < temps.length; i++) {
-			averagesqrTemp += Math.pow(temps[i], 2);
+			averagesqrTemp += temps[i]*temps[i];
 		}
-        return averagesqrTemp/temps.length-Math.pow(average(), 2);
+        return averagesqrTemp/temps.length-average()*average();
     }
     
     public double min() {
-		double minimum = BottomTemp;
+		double minimum = BOTTOMTEMP;
 		for (int i = 0; i < temps.length; i++) {
 			if (minimum >= temps[i]) {
 				minimum = temps[i];
@@ -80,15 +80,15 @@ public class TemperatureSeriesAnalysis {
 				count++; 
 			}
 		}	 
-		double [] TempLessThen = new double [count];
+		double [] tempLessThen = new double [count];
 		count = 0;
 		for (int i = 0; i < temps.length; i++) {
-			if(temps[i] < tempValue) {
+			if (temps[i] < tempValue) {
 				count++;
-				TempLessThen[count] = temps[i];
+				tempLessThen[count] = temps[i];
 			}
 		}
-        return TempLessThen;
+        return tempLessThen;
     }
     
     public double [] findTempsGreaterThen(double tempValue) {
@@ -98,18 +98,18 @@ public class TemperatureSeriesAnalysis {
 				count++;
 			}	
 		}	
-		double [] TempGreaterThen = new double [count];
+		double [] tempGreaterThen = new double [count];
 		count = 0;
 		for (int i = 0; i < temps.length; i++) {
 			if (temps[i] > tempValue) {
 				count++;
-				TempGreaterThen[count] = temps[i];
+				tempGreaterThen[count] = temps[i];
 			} 
 		}
-        return TempGreaterThen;
+        return tempGreaterThen;
     }
     
-	final static class TempSummaryStatistics{
+	static final class TempSummaryStatistics{
 		private double avgTemp;
 		private double devTemp;
 		private double minTemp;
@@ -133,7 +133,7 @@ public class TemperatureSeriesAnalysis {
 		for (int i = 0; i < temps.length; i++) {
 			tmp[i] = temps[i];
 		}
-		for(int i = 0; i < temperatures.length; i++) {
+		for (int i = 0; i < temperatures.length; i++) {
 			tmp[temps.length + i] = temperatures[i];
 		}
 		temps = tmp;
