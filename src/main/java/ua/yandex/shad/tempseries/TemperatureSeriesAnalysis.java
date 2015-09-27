@@ -63,11 +63,11 @@ public class TemperatureSeriesAnalysis {
 		return closestTotempValue;
 	}
     
-    public []double findTempsLessThen(double tempValue){
+    public double[] findTempsLessThen(double tempValue){
 		int count = 0;
 		 for(int i = 0; i < temps.length; i++)
 			 if(temps[i] < tempValue) count++;
-		[]double TempLessThen = new double [count];
+		double[] TempLessThen = new double [count];
 		count = 0;
 		 for(int i = 0; i < temps.length; i++){
 			 if(temps[i] < tempValue) {
@@ -82,7 +82,7 @@ public class TemperatureSeriesAnalysis {
 		int count = 0;
 		for(int i = 0; i < temps.length; i++)
 			if(temps[i] > tempValue) count++;
-		[]double TempGreaterThen = new double [count];
+		double[] TempGreaterThen = new double [count];
 		count = 0;
 		 for(int i = 0; i < temps.length; i++){
 			 if(temps[i] > tempValue) {
