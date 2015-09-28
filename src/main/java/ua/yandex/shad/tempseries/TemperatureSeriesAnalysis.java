@@ -10,7 +10,7 @@ public class TemperatureSeriesAnalysis {
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         temps = new double[temperatureSeries.length];
         for (int i = 0; i < temperatureSeries.length; i++) {
-			if (temperatureSeries[i] >= BOTTOMTEMP) {
+			if (temperatureSeries[i] < BOTTOMTEMP) {
 			    throw new ExceptionInInitializerError();
 			}
             temps[i] = temperatureSeries[i];	
