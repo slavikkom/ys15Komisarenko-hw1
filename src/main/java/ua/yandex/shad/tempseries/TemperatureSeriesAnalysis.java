@@ -10,7 +10,7 @@ public class TemperatureSeriesAnalysis {
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         temps = new double[temperatureSeries.length];
         for (int i = 0; i < temperatureSeries.length; i++) {
-			if (temperatureSeries[i] < BOTTOMTEMP) {
+            if (temperatureSeries[i] < BOTTOMTEMP) {
 			    throw new ExceptionInInitializerError();
 			}
             temps[i] = temperatureSeries[i];	
@@ -73,7 +73,8 @@ public class TemperatureSeriesAnalysis {
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(closestToZero) >= Math.abs(temps[i])) {
 				closestToZero = temps[i];
-				if ((Math.abs(closestToZero) == Math.abs(temps[i]))&&(temps[i]<0)) {
+				if ((Math.abs(closestToZero -temps[i]) < 0.0001)
+					&& (temps[i] < 0)) {
 					closestToZero = -temps[i];
 				}
 			}
@@ -123,15 +124,15 @@ public class TemperatureSeriesAnalysis {
 		if (temps.length == 0) {
 			throw new IllegalArgumentException();
 		}
-		for (int i = 0; i < temps.length; i++) {
+	    for (int i = 0; i < temps.length; i++) {
 			if (temps[i] > tempValue) {
 				count++;
 			}	
 		}	
 		double [] tempGreaterThen = new double [count];
 		count = 0;
-		for (int i = 0; i < temps.length; i++) {
-			if (temps[i] > tempValue) {
+		for (int i = 0; i < temps.length; i++){
+	        if (temps[i] > tempValue) {
 				count++;
 				tempGreaterThen[count] = temps[i];
 			} 
@@ -147,7 +148,7 @@ public class TemperatureSeriesAnalysis {
 	}
 	
     public TempSummaryStatistics summaryStatistics() {
-		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
+		TempSummaryStatistics summaryStat = new TempSummaryStatistics(summaryStat);
 		if (temps.length == 0) { 
 			throw new IllegalArgumentException();
 		}
@@ -166,8 +167,7 @@ public class TemperatureSeriesAnalysis {
 		for (int i = 0; i < temperatures.length; i++) {
 			tmp[temps.length + i] = temperatures[i];
 			if (temperatures[i] < BOTTOMTEMP) {
-		        //throw new Exception();
-			;
+		        throw new IllegalArgumentException();
 			}
 		}
 		temps = tmp;

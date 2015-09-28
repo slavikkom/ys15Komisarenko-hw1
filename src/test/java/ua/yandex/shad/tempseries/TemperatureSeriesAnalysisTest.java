@@ -64,4 +64,34 @@ public class TemperatureSeriesAnalysisTest {
 		assertEquals(expResult, actualResult, 00001);
 	}
 	
+	@Test
+	public void testMax() {
+		double[] temperatureSeries = {-273, 3, 17, 4};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 17;
+		double actualResult = seriesAnalysis.max();
+		assertEquals(expResult, actualResult, 00001);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testMaxIfEmpty() {
+		double[] temperatureSeries = {};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		seriesAnalysis.max();
+	}
+	
+	@Test
+	public void testFindTemperatureClosestToZero() {
+	    double[] temperatureSeries = {1, 0.1, -0.1, 0.2};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 0.1;
+		double actualResult = seriesAnalysis.findTempClosestToZero();
+		assertEquals(expResult, actualResult, 0.00001);
+	}
+	
+	@Test (expected = IllegalArgumentException.class) {
+		double temperatureSeries = {};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		seriesAnalysis.findTempClosestToZero();
+	}
 }
