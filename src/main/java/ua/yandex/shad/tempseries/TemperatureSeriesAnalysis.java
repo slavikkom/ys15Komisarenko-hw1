@@ -94,7 +94,7 @@ public class TemperatureSeriesAnalysis {
 			if (Math.abs(tempValue - temps[i]) < minimum) {
 				if ((Math.abs(Math.abs(closestToZero -
 				tempValue) - Math.abs(tempValue - 
-				temps[i]) ) < EPS) && temps[i] < tempValue) {
+				temps[i]) ) < EPS) && (temps[i] < tempValue)) {
 					closestTotempValue = 
 					tempValue + Math.abs(temps[i] - tempValue);
 					} else {
