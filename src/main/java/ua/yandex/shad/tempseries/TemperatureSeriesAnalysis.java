@@ -2,6 +2,7 @@ package ua.yandex.shad.tempseries;
 
 public class TemperatureSeriesAnalysis {    
     private static final double BOTTOMTEMP = -273.15;
+	private static final double EPS = 0.00001;
     private double []temps;
     public TemperatureSeriesAnalysis() {
         temps = new double[0];
@@ -11,7 +12,7 @@ public class TemperatureSeriesAnalysis {
         temps = new double[temperatureSeries.length];
         for (int i = 0; i < temperatureSeries.length; i++) {
             if (temperatureSeries[i] < BOTTOMTEMP) {
-			    throw new ExceptionInInitializerError();
+                throw new ExceptionInInitializerError();
 			}
             temps[i] = temperatureSeries[i];	
 		}
@@ -71,11 +72,12 @@ public class TemperatureSeriesAnalysis {
 		}
 		double closestToZero = temps[0];
 		for (int i = 0; i < temps.length; i++) {
-			if (Math.abs(closestToZero) >= Math.abs(temps[i])) {
-				closestToZero = temps[i];
-				if ((Math.abs(closestToZero -temps[i]) < 0.0001)
+			if (Math.abs(closestToZero) > Math.abs(temps[i])) {
+				if ((Math.abs(closestToZero - temps[i]) < EPS)
 					&& (temps[i] < 0)) {
 					closestToZero = -temps[i];
+				} else {
+					closestToZero = temps[i];
 				}
 			}
 		}
@@ -87,13 +89,21 @@ public class TemperatureSeriesAnalysis {
 			throw new IllegalArgumentException();
 		}
 		double closestTotempValue = temps[0];
-		double minimum = Math.abs(closestTotempValue - temps[0]);
+		double minimum = Math.abs(tempValue - temps[0]);
 		for (int i = 0; i < temps.length; i++) {
-			if (Math.abs(closestTotempValue - temps[i]) < minimum) {
-				closestTotempValue = temps[i];
-				minimum = 
-				Math.abs(closestTotempValue - temps[i]);
-			}
+			if (Math.abs(tempValue - temps[i]) < minimum) {
+				if ((Math.abs(Math.abs(closestToZero -
+				tempValue) - Math.abs(tempValue - 
+				temps[i]) ) < EPS) && temps[i] < tempValue) {
+					closestTotempValue = 
+					tempValue + Math.abs(temps[i] - tempValue);
+					} else {
+				    closestTotempValue = temps[i];
+				    minimum = 
+				    Math.abs(closestTotempValue - temps[i]);
+			        }
+			    }	
+			}		
 		}	
 		return closestTotempValue;
 	}
@@ -131,7 +141,7 @@ public class TemperatureSeriesAnalysis {
 		}	
 		double [] tempGreaterThen = new double [count];
 		count = 0;
-		for (int i = 0; i < temps.length; i++){
+		for (int i = 0; i < temps.length; i++) {
 	        if (temps[i] > tempValue) {
 				count++;
 				tempGreaterThen[count] = temps[i];

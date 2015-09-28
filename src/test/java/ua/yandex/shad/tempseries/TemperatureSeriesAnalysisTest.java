@@ -95,4 +95,22 @@ public class TemperatureSeriesAnalysisTest {
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		seriesAnalysis.findTempClosestToZero();
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testFindTemperatureClosestToValueIfEmpty() {
+		double[] temperatureSeries = {};
+		double value = 1;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		seriesAnalysis.findTempClosestToValue(value);
+	}
+	
+	@Test 
+	public void testFindTemperatureClosestToValue() {
+		double[] temperatureSeries = {1, 2.2, 1.8, 3};
+		double value = 2;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		expResult = 2.2;
+		actualResult = seriesAnalysis.findTempClosestToValue(value);
+		assertEquals(expResult,actualResult,00001);
+	}
 }
