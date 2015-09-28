@@ -34,7 +34,7 @@ public class TemperatureSeriesAnalysisTest {
 	public void testDevitation() {
 		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, -7.0};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		double expResult = 3.536;
+		double expResult = 10.0;
 		double actualResult = seriesAnalysis.devitation();
 		assertEquals(expResult, actualResult, 00001);
 	}

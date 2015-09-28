@@ -10,8 +10,11 @@ public class TemperatureSeriesAnalysis {
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         temps = new double[temperatureSeries.length];
         for (int i = 0; i < temperatureSeries.length; i++) {
-            temps[i] = temperatureSeries[i];
-		}	
+			if (temperatureSeries[i] >= BOTTOMTEMP) {
+			    throw new ExceptionInInitializerError();
+			}
+            temps[i] = temperatureSeries[i];	
+		}
     }
     
     public double average() { 
@@ -40,7 +43,7 @@ public class TemperatureSeriesAnalysis {
 		if (temps.length == 0) {
 			throw new IllegalArgumentException();
 		}
-		double minimum = BOTTOMTEMP;
+		double minimum = temps[0];
 		for (int i = 0; i < temps.length; i++) {
 			if (minimum >= temps[i]) {
 				minimum = temps[i];
