@@ -163,7 +163,8 @@ public class TemperatureSeriesAnalysis {
 		for (int i = 0; i < temperatures.length; i++) {
 			tmp[temps.length + i] = temperatures[i];
 			if (temperatures[i] < BOTTOMTEMP) {
-		        throw new Exception();
+		        //throw new Exception();
+                ;			
 			}
 		}
 		temps = tmp;
