@@ -103,8 +103,7 @@ public class TemperatureSeriesAnalysis {
 				    Math.abs(closestTotempValue - temps[i]);
 			        }
 			    }	
-			}		
-		}	
+			}			
 		return closestTotempValue;
 	}
     
