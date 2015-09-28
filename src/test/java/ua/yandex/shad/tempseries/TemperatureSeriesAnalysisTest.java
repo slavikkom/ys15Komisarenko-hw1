@@ -91,7 +91,7 @@ public class TemperatureSeriesAnalysisTest {
 	
 	@Test (expected = IllegalArgumentException.class) 
 	public void testFindTemperatureClosestToZeroIfEmpty() {
-		double temperatureSeries = {};
+		double[] temperatureSeries = {};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		seriesAnalysis.findTempClosestToZero();
 	}
