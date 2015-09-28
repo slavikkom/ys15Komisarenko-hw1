@@ -25,7 +25,7 @@ public class TemperatureSeriesAnalysis {
         return averageTemp/temps.length;
     }    
     
-    public double deviation() {
+    public double devitation() {
 		if (temps.length == 0) {
 			throw new IllegalArgumentException();
 		}
