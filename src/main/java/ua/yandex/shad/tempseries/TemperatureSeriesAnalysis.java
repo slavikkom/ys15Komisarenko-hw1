@@ -147,7 +147,7 @@ public class TemperatureSeriesAnalysis {
 		private double maxTemp;
 	}
 
-	TempSummaryStatistics() {
+	public TempSummaryStatistics() {
 		avgTemp = 0;
 		devTemp = 0;
 		minTemp = 0;
