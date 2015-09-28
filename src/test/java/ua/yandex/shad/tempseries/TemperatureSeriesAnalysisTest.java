@@ -15,5 +15,53 @@ public class TemperatureSeriesAnalysisTest {
         assertEquals(expResult, actualResult, 0.00001);
         
     }
+	
+	@Test
+	public void testAverageIfEmpty() {
+		double[] temperatureSeries = {};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		assertEquals(IllegalArgumentException(), seriesAnalysis.average(temperatureSeries));
+	}
     
+	@Test
+	public void testDevitationIfEmpty() {
+		double[] temperatureSeries = {};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		assertEquals(IllegalArgumentException(), seriesAnalysis.devitation(temperatureSeries));
+	}
+	
+	@Test
+	public void testDevitation() {
+		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, -7.0};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 3.536;
+		double actualResult = temperatureSeries.devitation();
+		assertEquals(expResult, actualResult, 00001);
+	}
+	
+	@Test
+	public void testMinIfEmpty() {
+		double[] temperatureSeries = {};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		assertEquals(IllegalArgumentException(), temperatureSeries.min());
+	}
+	
+	@Test
+	public void testMinIfBOTTOMTEMP() {
+		double[] temperatureSeries = {-7, 2, 4, -273.15};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = -273.15;
+		double actualResult = seriesAnalysis.min();
+		assertEquals(expResult, actualResult, 00001);
+	}
+	
+	@Test
+	public void testMin() {
+		double[] temperatureSeries = {0, 1, 2, 3};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 0;
+		double actualResult = seriesAnalysis.min();
+		assertEquals(expResult, actualResult, 00001);
+	}
+	
 }
