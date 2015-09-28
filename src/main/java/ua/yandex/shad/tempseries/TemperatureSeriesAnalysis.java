@@ -149,7 +149,7 @@ public class TemperatureSeriesAnalysis {
 			throw new IllegalArgumentException();
 		}
 		summaryStat.avgTemp = average();
-		summaryStat.devTemp = deviation();
+		summaryStat.devTemp = devitation();
 		summaryStat.minTemp = min();
 		summaryStat.maxTemp = max();
         return summaryStat;
