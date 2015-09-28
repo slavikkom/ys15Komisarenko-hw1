@@ -20,14 +20,14 @@ public class TemperatureSeriesAnalysisTest {
 	public void testAverageIfEmpty() {
 		double[] temperatureSeries = {};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		assertEquals(IllegalArgumentException(), seriesAnalysis.average(temperatureSeries));
+		assertEquals(IllegalArgumentException(), seriesAnalysis.average());
 	}
     
 	@Test
 	public void testDevitationIfEmpty() {
 		double[] temperatureSeries = {};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		assertEquals(IllegalArgumentException(), seriesAnalysis.devitation(temperatureSeries));
+		assertEquals(IllegalArgumentException(), seriesAnalysis.devitation());
 	}
 	
 	@Test
@@ -35,7 +35,7 @@ public class TemperatureSeriesAnalysisTest {
 		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, -7.0};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double expResult = 3.536;
-		double actualResult = temperatureSeries.devitation();
+		double actualResult = seriesAnalysis.devitation();
 		assertEquals(expResult, actualResult, 00001);
 	}
 	
@@ -43,7 +43,7 @@ public class TemperatureSeriesAnalysisTest {
 	public void testMinIfEmpty() {
 		double[] temperatureSeries = {};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		assertEquals(IllegalArgumentException(), temperatureSeries.min());
+		assertEquals(IllegalArgumentException(), seriesAnalysis.min());
 	}
 	
 	@Test
