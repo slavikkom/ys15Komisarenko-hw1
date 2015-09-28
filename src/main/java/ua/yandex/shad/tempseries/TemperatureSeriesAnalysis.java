@@ -15,9 +15,6 @@ public class TemperatureSeriesAnalysis {
     }
     
     public double average() { 
-	    if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
 		double averageTemp = 0;
 		for (int i = 0; i < temps.length; i++) {
 			averageTemp += temps[i];
@@ -26,9 +23,6 @@ public class TemperatureSeriesAnalysis {
     }    
     
     public double deviation() {
-		if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
 		double averagesqrTemp = 0;
 		for (int i = 0; i < temps.length; i++) {
 			averagesqrTemp += temps[i]*temps[i];
@@ -37,9 +31,6 @@ public class TemperatureSeriesAnalysis {
     }
     
     public double min() {
-		if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
 		double minimum = BOTTOMTEMP;
 		for (int i = 0; i < temps.length; i++) {
 			if (minimum >= temps[i]) {
@@ -50,9 +41,6 @@ public class TemperatureSeriesAnalysis {
     }
      
     public double max() {
-		if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
         double maximum = temps[0];
 		for (int i = 0; i < temps.length; i++) {
 			if (maximum <= temps[i]) {
@@ -63,9 +51,6 @@ public class TemperatureSeriesAnalysis {
     }
     
     public double findTempClosestToZero() {
-        if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
 		double closestToZero = temps[0];
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(closestToZero) >= Math.abs(temps[i])) {
@@ -79,9 +64,6 @@ public class TemperatureSeriesAnalysis {
     }
     
     public double findTempClosestToValue(double tempValue) {
-		if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
 		double closestTotempValue = temps[0];
 		double minimum = Math.abs(closestTotempValue - temps[0]);
 		for (int i = 0; i < temps.length; i++) {
@@ -96,9 +78,6 @@ public class TemperatureSeriesAnalysis {
     
     public double [] findTempsLessThen(double tempValue) {
 		int count = 0;
-		if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
 		for (int i = 0; i < temps.length; i++) {
 			if (temps[i] < tempValue) {
 				count++; 
@@ -117,9 +96,6 @@ public class TemperatureSeriesAnalysis {
     
     public double [] findTempsGreaterThen(double tempValue) {
 		int count = 0;
-		if (temps.length == 0) {
-			throw new IllegalArgumentException();
-		}
 		for (int i = 0; i < temps.length; i++) {
 			if (temps[i] > tempValue) {
 				count++;
@@ -145,9 +121,6 @@ public class TemperatureSeriesAnalysis {
 	
     public TempSummaryStatistics summaryStatistics() {
 		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
-		if (temps.length == 0) { 
-			throw new IllegalArgumentException();
-		}
 		summaryStat.avgTemp = average();
 		summaryStat.devTemp = deviation();
 		summaryStat.minTemp = min();
