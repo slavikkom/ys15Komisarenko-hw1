@@ -146,13 +146,6 @@ public class TemperatureSeriesAnalysis {
 		private double minTemp;
 		private double maxTemp;
 	}
-
-	public TempSummaryStatistics() {
-		avgTemp = 0;
-		devTemp = 0;
-		minTemp = 0;
-		maxTemp = 0;
-	}
 	
     public TempSummaryStatistics summaryStatistics() {
 		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
