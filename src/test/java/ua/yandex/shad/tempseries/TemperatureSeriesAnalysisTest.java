@@ -109,8 +109,8 @@ public class TemperatureSeriesAnalysisTest {
 		double[] temperatureSeries = {1, 2.2, 1.8, 3};
 		double value = 2;
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		expResult = 2.2;
-		actualResult = seriesAnalysis.findTempClosestToValue(value);
+		double expResult = 2.2;
+		double actualResult = seriesAnalysis.findTempClosestToValue(value);
 		assertEquals(expResult,actualResult,00001);
 	}
 }
