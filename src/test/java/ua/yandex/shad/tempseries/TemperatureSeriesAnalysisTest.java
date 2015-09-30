@@ -128,15 +128,27 @@ public class TemperatureSeriesAnalysisTest {
 		double tempValue = 1;
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double[] expResult = {0.001, -273, -3};
-		double[] actualResult = findTempsLessThen(tempValue);
-		assertEquals(expResult, actualResult, 0.0001);
+		double[] actualResult = seriesAnalysis.findTempsLessThen(tempValue);
+		assertArrayEquals(expResult, actualResult, 0.0001);
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
 	public void testFindTempsGreaterThenIfEmpty() {
 		double[] temperatureSeries = {};
 		double tempValue = 0;
-		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(seriesAnalysis);
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		seriesAnalysis.findTempsGreaterThen(tempValue);
 	}
+	
+	@Test
+	public void testFindTempsGreaterThen() {
+		double[] temperatureSeries = {0.99, 1.01, 2, -2, -272, 3};
+		double tempValue = 1;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(seriesAnalysis);
+		double[] expResult = {1.01, 2, 3};
+        actualResult = findTempsGreaterThen(tempValue);
+        assertArrayEquals(expResult, actualResult, 0.0001);		
+	}
+	
+	
 }
