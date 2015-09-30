@@ -170,24 +170,12 @@ public class TemperatureSeriesAnalysisTest {
 		assertArrayEquals(expResult, actualResult, 0.0001);
 	}
 	
-	@Test 
-	public void testAddTempsIfEmpty() {
-		double[] temperatureSeries = {};
-		double[] temperetures = {};
-		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		double[] expResult = {};
-		double[] actualResult = seriesAnalysis.addTemps(temperetures);
-		assertArrayEquals(expResult, actualResult, 0.001);
-	}
-	
-	@Test 
+	@Test (expected = IllegalArgumentException.class)
 	public void testAddTempsIfEmpty() {
 		double[] temperatureSeries = {1, 2};
-		double[] temperetures = {3, 4};
+		double[] temperetures = {-274, 2, 3};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		double[] expResult = {1, 2, 3, 4};
-		double[] actualResult = seriesAnalysis.addTemps(temperetures);
-		assertArrayEquals(expResult, actualResult, 0.001);
+		seriesAnalysis.addTemps(temperetures);
 	}
 	
 	
