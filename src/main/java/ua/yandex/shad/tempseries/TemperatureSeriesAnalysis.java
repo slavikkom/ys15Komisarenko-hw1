@@ -2,7 +2,7 @@ package ua.yandex.shad.tempseries;
 
 public class TemperatureSeriesAnalysis {    
     private static final double BOTTOMTEMP = -273.15;
-	private static final double EPS = 0.00001;
+    private static final double EPS = 0.00001;
     private double []temps;
     public TemperatureSeriesAnalysis() {
         temps = new double[0];
@@ -92,11 +92,12 @@ public class TemperatureSeriesAnalysis {
 		double minimum = Math.abs(tempValue - temps[0]);
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(tempValue - temps[i]) < minimum) {
-				if ((Math.abs(Math.abs(closestTotempValue -
-				tempValue) - Math.abs(tempValue - 
-				temps[i]) ) < EPS) && (temps[i] < tempValue)) {
+				if ((Math.abs(Math.abs(closestTotempValue
+				-tempValue) - Math.abs(tempValue 
+				- temps[i])) < EPS) && (temps[i] < tempValue)) {
 					closestTotempValue = 
-					tempValue + Math.abs(temps[i] - tempValue);
+					tempValue + Math.abs(temps[i]
+					- tempValue);
 					} else {
 				    closestTotempValue = temps[i];
 				    minimum = 

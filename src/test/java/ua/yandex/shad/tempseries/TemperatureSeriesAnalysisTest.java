@@ -111,6 +111,32 @@ public class TemperatureSeriesAnalysisTest {
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double expResult = 2.2;
 		double actualResult = seriesAnalysis.findTempClosestToValue(value);
-		assertEquals(expResult,actualResult,00001);
+		assertEquals(expResult,actualResult, 0.0001);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testFindTempsLessThanIfEmpty() {
+		double[] temperatureSeries = {};
+		double tempValue = 0;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		seriesAnalysis.findTempsLessThen(tempValue);
+	}
+	
+	@Test 
+	public void testFindTempsLessThen() {
+		double[] temperatureSeries = {1, 0.001, 2.2, -273, -3, 1.01};
+		double tempValue = 1;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double[] expResult = {0.001, -273, -3};
+		double[] actualResult = findTempsLessThen(tempValue);
+		assertEquals(expResult, actualResult, 0.0001);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testFindTempsGreaterThenIfEmpty() {
+		double[] temperatureSeries = {};
+		double tempValue = 0;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(seriesAnalysis);
+		seriesAnalysis.findTempsGreaterThen(tempValue);
 	}
 }
