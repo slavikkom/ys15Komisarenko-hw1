@@ -150,5 +150,26 @@ public class TemperatureSeriesAnalysisTest {
         assertArrayEquals(expResult, actualResult, 0.0001);		
 	}
 	
+	@Test
+	public void testFindTempGreaterThenIfOneElement() {
+		double[] temperatureSeries = {1};
+		double tempValue = 1;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double[] expResult = {};
+		double[] actualResult = seriesAnalysis.findTempsGreaterThen(tempValue);
+		assertArrayEquals(expResult, actualResult, 0.0001);
+	}
+	
+	@Test
+	public void testFindTempLessThenIfOneElement() {
+		double[] temperatureSeries = {2};
+		double tempValue = 3;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double[] expResult = {2};
+		double[] actualResult = seriesAnalysis.findTempsLessThen(tempValue);
+		assertArrayEquals(expResult, actualResult, 0.0001);
+	}
+	
+	
 	
 }

@@ -13,7 +13,7 @@ public class TemperatureSeriesAnalysis {
         for (int i = 0; i < temperatureSeries.length; i++) {
             if (temperatureSeries[i] < BOTTOMTEMP) {
                 throw new ExceptionInInitializerError();
-			}
+            }
             temps[i] = temperatureSeries[i];	
 		}
     }
