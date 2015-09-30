@@ -144,9 +144,9 @@ public class TemperatureSeriesAnalysisTest {
 	public void testFindTempsGreaterThen() {
 		double[] temperatureSeries = {0.99, 1.01, 2, -2, -272, 3};
 		double tempValue = 1;
-		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(seriesAnalysis);
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double[] expResult = {1.01, 2, 3};
-        actualResult = findTempsGreaterThen(tempValue);
+        actualResult = seriesAnalysis.findTempsGreaterThen(tempValue);
         assertArrayEquals(expResult, actualResult, 0.0001);		
 	}
 	
