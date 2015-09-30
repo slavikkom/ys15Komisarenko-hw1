@@ -146,7 +146,7 @@ public class TemperatureSeriesAnalysisTest {
 		double tempValue = 1;
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double[] expResult = {1.01, 2, 3};
-        actualResult = seriesAnalysis.findTempsGreaterThen(tempValue);
+        double[] actualResult = seriesAnalysis.findTempsGreaterThen(tempValue);
         assertArrayEquals(expResult, actualResult, 0.0001);		
 	}
 	
