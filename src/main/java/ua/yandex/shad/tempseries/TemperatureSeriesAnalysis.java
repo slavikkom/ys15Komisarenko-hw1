@@ -122,8 +122,8 @@ public class TemperatureSeriesAnalysis {
 		count = 0;
 		for (int i = 0; i < temps.length; i++) {
 			if (temps[i] < tempValue) {
-				count++;
 				tempLessThen[count] = temps[i];
+				count++;
 			}
 		}
         return tempLessThen;
@@ -143,8 +143,8 @@ public class TemperatureSeriesAnalysis {
 		count = 0;
 		for (int i = 0; i < temps.length; i++) {
 	        if (temps[i] > tempValue) {
-				count++;
 				tempGreaterThen[count] = temps[i];
+				count++;
 			} 
 		}
         return tempGreaterThen;
