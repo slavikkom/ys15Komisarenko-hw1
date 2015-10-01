@@ -155,15 +155,16 @@ public class TemperatureSeriesAnalysis {
 		private final double devTemp;
 		private final double minTemp;
 		private final double maxTemp;
-		
-		TempSummaryStatistics() {
-		    this.avgTemp = TemperatureSeriesAnalysis.average();
-		    this.devTemp = TemperatureSeriesAnalysis.devitation();
-		    this.minTemp = TemperatureSeriesAnalysis.min();
-		    this.maxTemp = TemperatureSeriesAnalysis.max();
-	    }
-		
 	}
+	
+	TempSummaryStatistics() {
+		avgTemp = TemperatureSeriesAnalysis.average();
+	    devTemp = TemperatureSeriesAnalysis.devitation();
+        minTemp = TemperatureSeriesAnalysis.min();
+		maxTemp = TemperatureSeriesAnalysis.max();
+	}
+		
+	
 	
 	
     public TempSummaryStatistics summaryStatistics() {
