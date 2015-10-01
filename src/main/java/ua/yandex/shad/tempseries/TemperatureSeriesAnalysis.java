@@ -157,17 +157,17 @@ public class TemperatureSeriesAnalysis {
 		private final double maxTemp;
 		
 		private TempSummaryStatistics() {
-		    static avgTemp = TemperatureSeriesAnalysis.average();
-		    static devTemp = TemperatureSeriesAnalysis.devitation();
-		    static minTemp = TemperatureSeriesAnalysis.min();
-		    static maxTemp = TemperatureSeriesAnalysis.max();
+		    avgTemp = TemperatureSeriesAnalysis.average();
+		    devTemp = TemperatureSeriesAnalysis.devitation();
+		    minTemp = TemperatureSeriesAnalysis.min();
+		    maxTemp = TemperatureSeriesAnalysis.max();
 	    }
 		
 	}
 	
 	
     public TempSummaryStatistics summaryStatistics() {
-		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
+		TempSummaryStatistics static summaryStat = new TempSummaryStatistics();
 		if (temps.length == 0) { 
 			throw new IllegalArgumentException();
 		}
