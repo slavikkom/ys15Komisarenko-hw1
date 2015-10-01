@@ -151,10 +151,17 @@ public class TemperatureSeriesAnalysis {
     }
     
 	static final class TempSummaryStatistics {
-		private double avgTemp;
-		private double devTemp;
-		private double minTemp;
-		private double maxTemp;
+		double avgTemp;
+		double devTemp;
+		double minTemp;
+		double maxTemp;
+	}
+	
+	TempSummaryStatistics() {
+		avgTemp = TemperatureSeriesAnalysis.average();
+		devTemp = TemperatureSeriesAnalysis.devitation();
+		minTemp = TemperatureSeriesAnalysis.min();
+		maxTemp = TemperatureSeriesAnalysis.max();
 	}
 	
     public TempSummaryStatistics summaryStatistics() {
@@ -162,10 +169,6 @@ public class TemperatureSeriesAnalysis {
 		if (temps.length == 0) { 
 			throw new IllegalArgumentException();
 		}
-		summaryStat.avgTemp = average();
-		summaryStat.devTemp = devitation();
-		summaryStat.minTemp = min();
-		summaryStat.maxTemp = max();
         return summaryStat;
     }
     
