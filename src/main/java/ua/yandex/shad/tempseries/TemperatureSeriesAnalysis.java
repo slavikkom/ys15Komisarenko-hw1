@@ -157,10 +157,10 @@ public class TemperatureSeriesAnalysis {
 		private final double maxTemp;
 		
 		private TempSummaryStatistics() {
-		    avgTemp = TemperatureSeriesAnalysis.average();
-		    devTemp = TemperatureSeriesAnalysis.devitation();
-		    minTemp = TemperatureSeriesAnalysis.min();
-		    maxTemp = TemperatureSeriesAnalysis.max();
+		    static avgTemp = TemperatureSeriesAnalysis.average();
+		    static devTemp = TemperatureSeriesAnalysis.devitation();
+		    static minTemp = TemperatureSeriesAnalysis.min();
+		    static maxTemp = TemperatureSeriesAnalysis.max();
 	    }
 		
 	}
