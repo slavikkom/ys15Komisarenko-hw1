@@ -16,6 +16,17 @@ public class TemperatureSeriesAnalysisTest {
         
     }
 	
+	@Test
+    public void testAverageIfOneElement() {
+        double[] temperatureSeries = {2.1};
+        TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+        double expResult = 2.1;
+        double actualResult = seriesAnalysis.average();
+        
+        assertEquals(expResult, actualResult, 0.00001);
+        
+    }
+	
 	@Test (expected = IllegalArgumentException.class)
 	public void testAverageIfEmpty() {
 		double[] temperatureSeries = {};
@@ -35,6 +46,15 @@ public class TemperatureSeriesAnalysisTest {
 		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, -7.0};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double expResult = 10.0;
+		double actualResult = seriesAnalysis.devitation();
+		assertEquals(expResult, actualResult, 00001);
+	}
+	
+	@Test
+	public void testDevitationIfOneEl() {
+		double[] temperatureSeries = {1.0};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 1.0;
 		double actualResult = seriesAnalysis.devitation();
 		assertEquals(expResult, actualResult, 00001);
 	}
@@ -65,10 +85,28 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test
+	public void testMinIfOneElement() {
+		double[] temperatureSeries = {0};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 0;
+		double actualResult = seriesAnalysis.min();
+		assertEquals(expResult, actualResult, 00001);
+	}
+	
+	@Test
 	public void testMax() {
 		double[] temperatureSeries = {-273, 3, 17, 4};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double expResult = 17;
+		double actualResult = seriesAnalysis.max();
+		assertEquals(expResult, actualResult, 00001);
+	}
+	
+	@Test
+	public void testMaxIfOneEl() {
+		double[] temperatureSeries = {3};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 3;
 		double actualResult = seriesAnalysis.max();
 		assertEquals(expResult, actualResult, 00001);
 	}
