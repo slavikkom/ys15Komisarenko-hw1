@@ -156,7 +156,7 @@ public class TemperatureSeriesAnalysis {
 		private final double minTemp;
 		private final double maxTemp;
 		
-		private static TempSummaryStatistics() {
+		private TempSummaryStatistics() {
 		    avgTemp = TemperatureSeriesAnalysis.average();
 		    devTemp = TemperatureSeriesAnalysis.devitation();
 		    minTemp = TemperatureSeriesAnalysis.min();
@@ -166,7 +166,7 @@ public class TemperatureSeriesAnalysis {
 	}
 	
 	
-    public TempSummaryStatistics summaryStatistics() {
+    public static TempSummaryStatistics summaryStatistics() {
 		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
 		if (temps.length == 0) { 
 			throw new IllegalArgumentException();
