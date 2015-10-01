@@ -15,7 +15,7 @@ public class TemperatureSeriesAnalysis {
                 throw new ExceptionInInitializerError();
             }
             temps[i] = temperatureSeries[i];	
-		}
+	    }
     }
     
     public double average() { 
@@ -151,13 +151,13 @@ public class TemperatureSeriesAnalysis {
     }
     
 	static final class TempSummaryStatistics {
-		double avgTemp;
-		double devTemp;
-		double minTemp;
-		double maxTemp;
+	    private final double avgTemp;
+		private final double devTemp;
+		private final double minTemp;
+		private final double maxTemp;
 	}
 	
-	TempSummaryStatistics() {
+	private TempSummaryStatistics() {
 		avgTemp = TemperatureSeriesAnalysis.average();
 		devTemp = TemperatureSeriesAnalysis.devitation();
 		minTemp = TemperatureSeriesAnalysis.min();
@@ -186,4 +186,5 @@ public class TemperatureSeriesAnalysis {
 		temps = tmp;
         return 0;
     }
+	
 }
