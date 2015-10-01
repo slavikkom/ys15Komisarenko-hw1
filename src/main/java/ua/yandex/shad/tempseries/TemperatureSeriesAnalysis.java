@@ -150,7 +150,7 @@ public class TemperatureSeriesAnalysis {
         return tempGreaterThen;
     }
     
-	static final class TempSummaryStatistics {
+	final class TempSummaryStatistics {
 	    private final double avgTemp;
 		private final double devTemp;
 		private final double minTemp;
@@ -166,7 +166,7 @@ public class TemperatureSeriesAnalysis {
 	}
 	
 	
-    public static TempSummaryStatistics summaryStatistics() {
+    public TempSummaryStatistics summaryStatistics() {
 		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
 		if (temps.length == 0) { 
 			throw new IllegalArgumentException();
