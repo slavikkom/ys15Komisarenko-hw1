@@ -225,4 +225,14 @@ public class TemperatureSeriesAnalysisTest {
 		seriesAnalysis.addTemps(temperetures);
 	}
 	
+	@Test
+	public void testSummatyStatMin() {
+		double[] temperatureSeries = {2, 3, 4};
+		TempSummaryStatistics summaryStat = 
+		new TempSummaryStatistics(temperatureSeries);
+		double expResult = 2;
+		double actualResult = summaryStat.getMinTemp();
+		assertArrayEquals(expResult, actualResult, 0.0001);
+	}
+	
 }

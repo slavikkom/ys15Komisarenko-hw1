@@ -92,9 +92,9 @@ public class TemperatureSeriesAnalysis {
 		double minimum = Math.abs(tempValue - temps[0]);
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(tempValue - temps[i]) < minimum) {
-				if ((Math.abs(temps[i] +
-				closestTotempValue -
-				2*tempValue) < EPS)
+				if ((Math.abs(temps[i] 
+				+ closestTotempValue 
+				- 2*tempValue) < EPS)
 				&& (temps[i] < tempValue)) {
 					closestTotempValue = 
 					tempValue + Math.abs(temps[i]
@@ -153,7 +153,8 @@ public class TemperatureSeriesAnalysis {
 	
 	
     public TempSummaryStatistics summaryStatistics() {
-		TempSummaryStatistics summaryStat = new TempSummaryStatistics(temps);
+		TempSummaryStatistics summaryStat = 
+		new TempSummaryStatistics(temps);
 		if (temps.length == 0) { 
 			throw new IllegalArgumentException();
 		}
