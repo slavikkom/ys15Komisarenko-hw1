@@ -228,8 +228,8 @@ public class TemperatureSeriesAnalysisTest {
 	@Test (expected = IllegalArgumentException.class)
 	public void testSummaryStatisticIfEmpty() {
 		double[] temperatureSeries = {};
-		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
-		summaryStat.summaryStatistics(temperatureSeries);
+		TempSummaryStatistics summaryStat = new TempSummaryStatistics(temperatureSeries);
+		summaryStat.summaryStatistics();
 	}
 	
 	
