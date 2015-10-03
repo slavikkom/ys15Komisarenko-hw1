@@ -235,6 +235,36 @@ public class TemperatureSeriesAnalysisTest {
 		assertEquals(expResult, actualResult, 0.0001);
 	}
 	
+	@Test
+	public void testSummatyStatMax() {
+		double[] temperatureSeries = {2, 3, 4};
+		TempSummaryStatistics summaryStat = 
+		new TempSummaryStatistics(temperatureSeries);
+		double expResult = 4;
+		double actualResult = summaryStat.getMaxTemp();
+		assertEquals(expResult, actualResult, 0.0001);
+	}
+	
+	@Test
+	public void testSummatyStatAvg() {
+		double[] temperatureSeries = {2, 3, 4};
+		TempSummaryStatistics summaryStat = 
+		new TempSummaryStatistics(temperatureSeries);
+		double expResult = 3;
+		double actualResult = summaryStat.getAvgTemp();
+		assertEquals(expResult, actualResult, 0.0001);
+	}
+	
+	@Test
+	public void testSummatyStatDev() {
+		double[] temperatureSeries = {0, 2, 4};
+		TempSummaryStatistics summaryStat = 
+		new TempSummaryStatistics(temperatureSeries);
+		double expResult = 8/3;
+		double actualResult = summaryStat.getDevTemp();
+		assertEquals(expResult, actualResult, 0.0001);
+	}
+	
 	
 	
 }

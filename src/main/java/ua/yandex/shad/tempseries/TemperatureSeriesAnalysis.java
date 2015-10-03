@@ -14,7 +14,7 @@ public class TemperatureSeriesAnalysis {
             if (temperatureSeries[i] < BOTTOMTEMP) {
                 throw new ExceptionInInitializerError();
             }
-            temps[i] = temperatureSeries[i];	
+                temps[i] = temperatureSeries[i];	
 	    }
     }
     
@@ -73,7 +73,8 @@ public class TemperatureSeriesAnalysis {
 		double closestToZero = temps[0];
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(closestToZero) >= Math.abs(temps[i])) {
-				if ((Math.abs(Math.abs(closestToZero) - Math.abs(temps[i])) < EPS)
+				if ((Math.abs(Math.abs(closestToZero)
+					- Math.abs(temps[i])) < EPS)
 					&& (temps[i]*closestToZero < 0)) {
 					closestToZero = Math.abs(temps[i]);
 				} else {
