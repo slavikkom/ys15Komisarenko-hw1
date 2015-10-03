@@ -226,7 +226,7 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test
-	public void testSummatyStatMin() {
+	public void testSummaryStatMin() {
 		double[] temperatureSeries = {2, 3, 4};
 		TempSummaryStatistics summaryStat = 
 		new TempSummaryStatistics(temperatureSeries);
@@ -236,7 +236,7 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test
-	public void testSummatyStatMax() {
+	public void testSummaryStatMax() {
 		double[] temperatureSeries = {2, 3, 4};
 		TempSummaryStatistics summaryStat = 
 		new TempSummaryStatistics(temperatureSeries);
@@ -246,7 +246,7 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test
-	public void testSummatyStatAvg() {
+	public void testSummaryStatAvg() {
 		double[] temperatureSeries = {2, 3, 4};
 		TempSummaryStatistics summaryStat = 
 		new TempSummaryStatistics(temperatureSeries);
@@ -256,11 +256,11 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test
-	public void testSummatyStatDev() {
+	public void testSummaryStatDev() {
 		double[] temperatureSeries = {0, 1, 2};
 		TempSummaryStatistics summaryStat = 
 		new TempSummaryStatistics(temperatureSeries);
-		double expResult = 2/3;
+		double expResult = 0.66666666;
 		double actualResult = summaryStat.getDevTemp();
 		assertEquals(expResult, actualResult, 0.0001);
 	}
