@@ -265,6 +265,21 @@ public class TemperatureSeriesAnalysisTest {
 		assertEquals(expResult, actualResult, 0.0001);
 	}
 	
+	@Test (expected = IllegalArgumentException.class)
+	public void testSummaryStatIfEmpty() {
+		double[] temperatureSeries = {};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		seriesAnalysis.summaryStatistics();
+	}
 	
+	@Test 
+	public void testSummaryStat() {
+		double[] temperatureSeries = {1, 2, 3};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		TempSummaryStatistics summaryStat = seriesAnalysis.summaryStatistics();
+		double expResult = 1;
+		double actualResult = summaryStat.getMinTemp();
+		assertEquals(expResult, actualResult, 0.0001);
+	}
 	
 }

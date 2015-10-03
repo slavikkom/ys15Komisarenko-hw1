@@ -5,7 +5,7 @@ public class TempSummaryStatistics {
     private double minTemp;
     private double avgTemp;
     private double devTemp;
-	
+
 	public TempSummaryStatistics() {
 		setMaxTemp(0);
 		setMinTemp(0);
