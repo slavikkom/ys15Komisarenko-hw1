@@ -333,8 +333,15 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test (expected = ExceptionInInitializerError.class)
-	public void testConstructorWithPar() {
+	public void testConstructorWithParIfBottomTemp() {
 		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, -275};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+	}
+	
+	@Test 
+	public void testConstructorWithPar() {
+		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, 4};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		assertArrayEquals(temperatureSeries, seriesAnalysis.GetTemps(), 0.0001);
 	}
 }
