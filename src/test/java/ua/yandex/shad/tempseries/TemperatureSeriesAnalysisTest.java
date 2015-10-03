@@ -332,7 +332,7 @@ public class TemperatureSeriesAnalysisTest {
 		assertEquals(expResult, actualResult);
 	}
 	
-	@Test (expected = IllegalArgumentException.class)
+	@Test (expected = ExceptionInInitializerError.class)
 	public void testConstructorWithPar() {
 		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, -275};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
