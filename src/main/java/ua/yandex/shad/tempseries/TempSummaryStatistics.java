@@ -6,35 +6,35 @@ public class TempSummaryStatistics {
     private double avgTemp;
     private double devTemp;
 	
-	public setMaxTemp(double a) {
+	public void setMaxTemp(double a) {
 		this.maxTemp = a;
 	}
 	
-	public setMinTemp(double a) {
+	public void setMinTemp(double a) {
 		this.minTemp = a;
 	}
 	
-	public setAvgTemp(double a) {
+	public void setAvgTemp(double a) {
 		this.avgTemp = a;
 	}
 	
-	public setDevTemp(double a) {
+	public void setDevTemp(double a) {
 		this.devTemp = a;
 	}
 	
-	public getMinTemp() {
+	public double getMinTemp() {
 		return this.minTemp;
 	}
 	
-	public getMaxTemp() {
+	public double getMaxTemp() {
 		return this.maxTemp;
 	}
 	
-	public getAvgTemp() {
+	public double getAvgTemp() {
 		return this.avgTemp;
 	}
 	
-	public getDevTemp() {
+	public double getDevTemp() {
 		return this.devTemp;
 	}
 	

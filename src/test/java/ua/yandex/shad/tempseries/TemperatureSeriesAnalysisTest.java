@@ -235,4 +235,6 @@ public class TemperatureSeriesAnalysisTest {
 		assertArrayEquals(expResult, actualResult, 0.0001);
 	}
 	
+	
+	
 }
