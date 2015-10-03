@@ -72,13 +72,13 @@ public class TemperatureSeriesAnalysis {
 		}
 		double closestToZero = temps[0];
 		for (int i = 0; i < temps.length; i++) {
-			if (Math.abs(closestToZero) > Math.abs(temps[i])) {
-				if ((Math.abs(closestToZero - temps[i]) < EPS)
-					&& (temps[i] < 0)) {
-					closestToZero = -temps[i];
-				} else {
-					closestToZero = temps[i];
+			if (Math.abs(closestToZero) >= Math.abs(temps[i])) {
+				if (assertEquals(Math.abs(closestToZero), Math.abs(temps[i]), EPS))
+					&& (temps[i]*closestToZero < 0)) {
+					closestToZero = Math.abs(temps[i]);
 				}
+			} else {
+			    closestToZero = temps[i];    
 			}
 		}
 		return closestToZero;
@@ -92,9 +92,10 @@ public class TemperatureSeriesAnalysis {
 		double minimum = Math.abs(tempValue - temps[0]);
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(tempValue - temps[i]) < minimum) {
-				if ((Math.abs(Math.abs(closestTotempValue
-				-tempValue) - Math.abs(tempValue 
-				- temps[i])) < EPS) && (temps[i] < tempValue)) {
+				if ((Math.abs(temps[i] +
+				closestTotempValue -
+				2*tempValue) < EPS)
+				&& (temps[i] < tempValue)) {
 					closestTotempValue = 
 					tempValue + Math.abs(temps[i]
 					- tempValue);
@@ -149,22 +150,6 @@ public class TemperatureSeriesAnalysis {
 		}
         return tempGreaterThen;
     }
-    
-	final class TempSummaryStatistics {
-	    private final double avgTemp;
-		private final double devTemp;
-		private final double minTemp;
-		private final double maxTemp;
-	}
-	
-	TempSummaryStatistics() {
-		avgTemp = TemperatureSeriesAnalysis.average();
-	    devTemp = TemperatureSeriesAnalysis.devitation();
-        minTemp = TemperatureSeriesAnalysis.min();
-		maxTemp = TemperatureSeriesAnalysis.max();
-	}
-		
-	
 	
 	
     public TempSummaryStatistics summaryStatistics() {
