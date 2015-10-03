@@ -127,6 +127,15 @@ public class TemperatureSeriesAnalysisTest {
 		assertEquals(expResult, actualResult, 0.00001);
 	}
 	
+	@Test
+	public void testFindTemperatureClosestToZeroIfOneElement() {
+	    double[] temperatureSeries = {1};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 1;
+		double actualResult = seriesAnalysis.findTempClosestToZero();
+		assertEquals(expResult, actualResult, 0.00001);
+	}
+	
 	@Test (expected = IllegalArgumentException.class) 
 	public void testFindTemperatureClosestToZeroIfEmpty() {
 		double[] temperatureSeries = {};
