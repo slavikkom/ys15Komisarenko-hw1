@@ -323,4 +323,12 @@ public class TemperatureSeriesAnalysisTest {
 		double actualResult = summaryStat.getAvgTemp();
 		assertEquals(expResult, actualResult, 0.0001);
 	}
+	
+	@Test
+	public void testConstructor() {
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis();
+		int expResult = 0;
+		int actualResult = seriesAnalysis.GetTemps().length;
+		assertEquals(expResult, actualResult);
+	}
 }

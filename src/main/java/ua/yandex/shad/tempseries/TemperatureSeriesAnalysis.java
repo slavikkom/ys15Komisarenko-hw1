@@ -17,6 +17,10 @@ public class TemperatureSeriesAnalysis {
                 temps[i] = temperatureSeries[i];	
 	    }
     }
+	
+	public double[] GetTemps() {
+		return this.temps;
+	}
     
     public double average() { 
 	    if (temps.length == 0) {
@@ -173,7 +177,7 @@ public class TemperatureSeriesAnalysis {
 		        throw new IllegalArgumentException();
 			}
 		}
-		temps = tmp;
+		System.arraycopy(temps, 0, tmp, 0, temps.length);
         return 0;
     }
 	
