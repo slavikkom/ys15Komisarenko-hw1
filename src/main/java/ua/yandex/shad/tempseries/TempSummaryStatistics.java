@@ -5,6 +5,14 @@ public class TempSummaryStatistics {
 	double minTemp;
 	double avgTemp;
 	double devTemp;
+	
+	public TempSummaryStatistics() {
+		this.maxTemp = 0;
+		this.minTemp = 0;
+		this.avgTemp = 0;
+		this.devTemp = 0;
+	} 
+	
 	public TempSummaryStatistics(double[] temperatureSeries) {
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		this.maxTemp = seriesAnalysis.max();

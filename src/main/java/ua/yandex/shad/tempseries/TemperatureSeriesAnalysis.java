@@ -153,7 +153,7 @@ public class TemperatureSeriesAnalysis {
 	
 	
     public TempSummaryStatistics summaryStatistics() {
-		TempSummaryStatistics summaryStat = new TempSummaryStatistics(temperatureSeries);
+		TempSummaryStatistics summaryStat = new TempSummaryStatistics(temps);
 		if (temps.length == 0) { 
 			throw new IllegalArgumentException();
 		}
