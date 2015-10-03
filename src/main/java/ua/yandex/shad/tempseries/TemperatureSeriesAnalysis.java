@@ -76,9 +76,9 @@ public class TemperatureSeriesAnalysis {
 				if ((Math.abs(Math.abs(closestToZero) - Math.abs(temps[i])) < EPS)
 					&& (temps[i]*closestToZero < 0)) {
 					closestToZero = Math.abs(temps[i]);
-				}
-			} else {
-			    closestToZero = temps[i];    
+				} else {
+			    closestToZero = temps[i];     
+			    }
 			}
 		}
 		return closestToZero;
