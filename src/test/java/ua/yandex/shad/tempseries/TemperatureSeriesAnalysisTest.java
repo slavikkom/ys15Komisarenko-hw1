@@ -273,7 +273,7 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test 
-	public void testSummaryStatMin() {
+	public void testSummaryStatisticMin() {
 		double[] temperatureSeries = {1, 2, 3};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		TempSummaryStatistics summaryStat = seriesAnalysis.summaryStatistics();
@@ -283,7 +283,7 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test 
-	public void testSummaryStatMax() {
+	public void testSummaryStatisticMax() {
 		double[] temperatureSeries = {0, 2, 6};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		TempSummaryStatistics summaryStat = seriesAnalysis.summaryStatistics();
@@ -293,7 +293,7 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test 
-	public void testSummaryStatAvg() {
+	public void testSummaryStatisticAvg() {
 		double[] temperatureSeries = {0, 3, 6};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		TempSummaryStatistics summaryStat = seriesAnalysis.summaryStatistics();
@@ -303,7 +303,7 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test 
-	public void testSummaryStatDev() {
+	public void testSummaryStatisticDev() {
 		double[] temperatureSeries = {1, 2, 3};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		TempSummaryStatistics summaryStat = seriesAnalysis.summaryStatistics();
