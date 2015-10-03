@@ -325,10 +325,16 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test
-	public void testConstructor() {
+	public void testConstructorWithoutPar() {
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis();
 		int expResult = 0;
 		int actualResult = seriesAnalysis.GetTemps().length;
 		assertEquals(expResult, actualResult);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testConstructorWithPar() {
+		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, -275};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 	}
 }
