@@ -6,9 +6,9 @@ public class TempSummaryStatistics {
 	double avgTemp;
 	double devTemp;
 	public TempSummaryStatistics() {
-		maxTemp = TemperatureSeriesAnalysis.max();
-		minTemp = TemperatureSeriesAnalysis.min();
-		avgTemp = TemperatureSeriesAnalysis.average();
-		devTemp = TemperatureSeriesAnalysis.devitation();
+		this.maxTemp = TemperatureSeriesAnalysis.max();
+		this.minTemp = TemperatureSeriesAnalysis.min();
+		this.avgTemp = TemperatureSeriesAnalysis.average();
+		this.devTemp = TemperatureSeriesAnalysis.devitation();
 	}
 }

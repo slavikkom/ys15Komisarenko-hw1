@@ -73,7 +73,7 @@ public class TemperatureSeriesAnalysis {
 		double closestToZero = temps[0];
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(closestToZero) >= Math.abs(temps[i])) {
-				if ((assertEquals(Math.abs(closestToZero), Math.abs(temps[i]), EPS))
+				if ((Math.abs(Math.abs(closestToZero) - Math.abs(temps[i])) < EPS)
 					&& (temps[i]*closestToZero < 0)) {
 					closestToZero = Math.abs(temps[i]);
 				}
