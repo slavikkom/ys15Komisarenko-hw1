@@ -257,10 +257,10 @@ public class TemperatureSeriesAnalysisTest {
 	
 	@Test
 	public void testSummatyStatDev() {
-		double[] temperatureSeries = {0, 2, 4};
+		double[] temperatureSeries = {0, 1, 2};
 		TempSummaryStatistics summaryStat = 
 		new TempSummaryStatistics(temperatureSeries);
-		double expResult = 8/3;
+		double expResult = 2/3;
 		double actualResult = summaryStat.getDevTemp();
 		assertEquals(expResult, actualResult, 0.0001);
 	}
