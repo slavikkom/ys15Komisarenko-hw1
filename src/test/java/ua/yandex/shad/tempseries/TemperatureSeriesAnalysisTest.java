@@ -229,7 +229,7 @@ public class TemperatureSeriesAnalysisTest {
 	public void testSummaryStatisticIfEmpty() {
 		double[] temperatureSeries = {};
 		TempSummaryStatistics summaryStat = new TempSummaryStatistics();
-		summaryStat.summaryStatistics();
+		summaryStat.summaryStatistics(temperatureSeries);
 	}
 	
 	
