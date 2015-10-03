@@ -41,7 +41,7 @@ public class TempSummaryStatistics {
 	public TempSummaryStatistics() {
 		setMaxTemp(0);
 		setMinTemp(0);
-		setavgTemp(0);
+		setAvgTemp(0);
 		setDevTemp(0);
 	} 
 	
@@ -53,7 +53,7 @@ public class TempSummaryStatistics {
 		new TemperatureSeriesAnalysis(temperatureSeries);
 		setMaxTemp(seriesAnalysis.max());
 		setMinTemp(seriesAnalysis.min());
-		setavgTemp(seriesAnalysis.average());
+		setAvgTemp(seriesAnalysis.average());
 		setDevTemp(seriesAnalysis.devitation());
 	}
 }
