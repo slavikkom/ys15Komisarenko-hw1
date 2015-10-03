@@ -232,7 +232,7 @@ public class TemperatureSeriesAnalysisTest {
 		new TempSummaryStatistics(temperatureSeries);
 		double expResult = 2;
 		double actualResult = summaryStat.getMinTemp();
-		assertArrayEquals(expResult, actualResult, 0.0001);
+		assertEquals(expResult, actualResult, 0.0001);
 	}
 	
 	
