@@ -167,7 +167,8 @@ public class TemperatureSeriesAnalysis {
     }
     
     public int addTemps(double ... temperatures) {
-		double []tmp = new double [temps.length + temperatures.length];
+		int length = temps.length;
+		double [] tmp = new double [temps.length + temperatures.length];
 		for (int i = 0; i < temps.length; i++) {
 			tmp[i] = temps[i];
 		}
@@ -177,7 +178,8 @@ public class TemperatureSeriesAnalysis {
 		        throw new IllegalArgumentException();
 			}
 		}
-		System.arraycopy(temps, 0, tmp, 0, temps.length);
+		temps = new double [length+temperatures.length]; 
+		System.arraycopy(temps, 0, tmp, 0, length+temperatures.length);
         return 0;
     }
 	
