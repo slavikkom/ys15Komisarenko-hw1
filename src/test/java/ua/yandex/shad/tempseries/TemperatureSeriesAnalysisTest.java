@@ -173,7 +173,7 @@ public class TemperatureSeriesAnalysisTest {
 	@Test 
 	public void testFindTemperatureClosestToValueMoreNumbers() {
 		double[] temperatureSeries = {1, 2.2, 1.8, 3, -221, 1.999, 2.0011, 2.001, 1.8999};
-		double value = 2;
+		double value = 2;	
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double expResult = 2.001;
 		double actualResult = seriesAnalysis.findTempClosestToValue(value);
@@ -229,9 +229,9 @@ public class TemperatureSeriesAnalysisTest {
 	@Test
 	public void testFindTempLessThenIfOneElement() {
 		double[] temperatureSeries = {2};
-		double tempValue = 3;
+		double tempValue = 2;
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		double[] expResult = {2};
+		double[] expResult = {};
 		double[] actualResult = seriesAnalysis.findTempsLessThen(tempValue);
 		assertArrayEquals(expResult, actualResult, 0.0001);
 	}

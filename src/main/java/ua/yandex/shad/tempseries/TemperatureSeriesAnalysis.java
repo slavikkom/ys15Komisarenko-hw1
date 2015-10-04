@@ -99,10 +99,10 @@ public class TemperatureSeriesAnalysis {
 		double minimum = Math.abs(tempValue - temps[0]);
 		for (int i = 0; i < temps.length; i++) {
 			if (Math.abs(tempValue - temps[i]) <= minimum) {
-				if (!((Math.abs(temps[i] 
+				if (!(Math.abs(temps[i] 
 				+ closestTotempValue 
 				- 2*tempValue) < EPS)
-				&& (temps[i] < tempValue))) {
+				|| !(temps[i] < tempValue)) {
 				    closestTotempValue = temps[i];
 				    minimum = 
 				    Math.abs(closestTotempValue - tempValue);

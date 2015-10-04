@@ -11,7 +11,7 @@ public class TempSummaryStatistics {
         setMinTemp(0);
         setAvgTemp(0);
         setDevTemp(0);
-	} 
+    } 
 	
     public TempSummaryStatistics(double[] temperatureSeries) {
         if (temperatureSeries.length == 0) { 
@@ -25,9 +25,9 @@ public class TempSummaryStatistics {
 		setDevTemp(seriesAnalysis.devitation());
 	}
 	
-	private void setMaxTemp(double a) {
-		this.maxTemp = a;
-	}
+    private void setMaxTemp(double a) {
+        this.maxTemp = a;
+    }
 	
 	private void setMinTemp(double a) {
 		this.minTemp = a;
