@@ -14,8 +14,8 @@ public class TemperatureSeriesAnalysis {
             if (temperatureSeries[i] < BOTTOMTEMP) {
                 throw new ExceptionInInitializerError();
             }
-                temps[i] = temperatureSeries[i];	
-	    }
+            temps[i] = temperatureSeries[i];	
+        }
     }
 	
 	public double [] getTemps() {

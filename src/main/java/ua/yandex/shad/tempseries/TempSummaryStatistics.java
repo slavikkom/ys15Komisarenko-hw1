@@ -12,7 +12,7 @@ public class TempSummaryStatistics {
         setAvgTemp(0);
         setDevTemp(0);
     } 
-	
+
     public TempSummaryStatistics(double[] temperatureSeries) {
         if (temperatureSeries.length == 0) { 
             throw new IllegalArgumentException();
