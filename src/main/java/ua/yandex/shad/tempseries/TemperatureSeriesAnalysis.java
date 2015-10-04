@@ -98,16 +98,16 @@ public class TemperatureSeriesAnalysis {
 		double closestTotempValue = temps[0];
 		double minimum = Math.abs(tempValue - temps[0]);
 		for (int i = 0; i < temps.length; i++) {
-			if (Math.abs(tempValue - temps[i]) <= minimum) {
-				if (!(Math.abs(temps[i] 
-				+ closestTotempValue 
-				- 2*tempValue) < EPS)
-				|| !(temps[i] < tempValue)) {
-				    closestTotempValue = temps[i];
-				    minimum = 
-				    Math.abs(closestTotempValue - tempValue);
-			        }
-			    }	
+			if ((Math.abs(tempValue - temps[i]) <= minimum) 
+			&& (!(Math.abs(temps[i] 
+			+ closestTotempValue 
+			- 2*tempValue) < EPS)
+			|| !(temps[i] < tempValue))) {
+				closestTotempValue = temps[i];
+				minimum = 
+				Math.abs(closestTotempValue - tempValue);
+			    }
+			    	
 			}			
 		return closestTotempValue;
 	}
