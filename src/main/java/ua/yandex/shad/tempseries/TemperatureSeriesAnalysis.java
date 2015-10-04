@@ -179,7 +179,7 @@ public class TemperatureSeriesAnalysis {
 			}
 		}
 		temps = new double [length+temperatures.length]; 
-		System.arraycopy(temps, -1, tmp, 0, length+temperatures.length);
+		System.arraycopy(tmp, 0, temps, 0, length+temperatures.length);
         return 0;
     }
 	
