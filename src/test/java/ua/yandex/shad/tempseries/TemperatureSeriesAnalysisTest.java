@@ -322,17 +322,6 @@ public class TemperatureSeriesAnalysisTest {
 		assertEquals(expResult, actualResult, 0.0001);
 	}
 	
-	@Test
-	public void testSummaryStatSetAvg() {
-		double[] temperatureSeries = {2, 3, 4};
-		TempSummaryStatistics summaryStat = 
-		new TempSummaryStatistics(temperatureSeries);
-		double expResult = 4;
-		double four = 4;
-		summaryStat.setAvgTemp(four);
-		double actualResult = summaryStat.getAvgTemp();
-		assertEquals(expResult, actualResult, 0.0001);
-	}
 	
 	@Test
 	public void testConstructorWithoutPar() {
