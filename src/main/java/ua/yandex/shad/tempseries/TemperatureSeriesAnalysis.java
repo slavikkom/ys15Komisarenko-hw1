@@ -178,8 +178,9 @@ public class TemperatureSeriesAnalysis {
 		        throw new IllegalArgumentException();
 			}
 		}
-		temps = new double [length+temperatures.length]; 
-		System.arraycopy(temps, 0, tmp, 0, length+temperatures.length);
+		//temps = new double [length+temperatures.length]; 
+		//System.arraycopy(temps, 0, tmp, 0, length+temperatures.length);
+		temps = Arrays.copyOf(tmp, length+temperatures.length);
         return 0;
     }
 	
