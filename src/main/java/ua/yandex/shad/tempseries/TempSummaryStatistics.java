@@ -25,7 +25,7 @@ public class TempSummaryStatistics {
 		setDevTemp(seriesAnalysis.devitation());
 	}
 	
-	public void setMaxTemp(double a) {
+	/*public void setMaxTemp(double a) {
 		this.maxTemp = a;
 	}
 	
@@ -39,7 +39,7 @@ public class TempSummaryStatistics {
 	
 	public void setDevTemp(double a) {
 		this.devTemp = a;
-	}
+	}*/
 	
 	public double getMinTemp() {
 		return this.minTemp;

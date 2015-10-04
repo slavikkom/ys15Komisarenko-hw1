@@ -18,7 +18,7 @@ public class TemperatureSeriesAnalysis {
 	    }
     }
 	
-	public double[] GetTemps() {
+	public double [] getTemps() {
 		return this.temps;
 	}
     
