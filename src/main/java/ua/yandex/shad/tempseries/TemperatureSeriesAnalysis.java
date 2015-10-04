@@ -19,7 +19,9 @@ public class TemperatureSeriesAnalysis {
     }
 	
 	public double [] getTemps() {
-		return this.temps;
+        double [] tempsCopy = new double [temps.length];
+        System.arraycopy(temps, 0, tempsCopy, 0, temps.length);
+		return tempsCopy;
 	}
     
     public double average() { 

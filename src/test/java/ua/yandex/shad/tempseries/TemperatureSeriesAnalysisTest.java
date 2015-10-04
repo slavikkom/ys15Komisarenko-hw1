@@ -128,6 +128,15 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test
+	public void testFindTemperatureClosestToZeroMoreTemperatures() {
+	    double[] temperatureSeries = {1, 0.1, -0.1, 0.2, 0.003, 0.001, -0.00099, 0.001};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = -0.00099;
+		double actualResult = seriesAnalysis.findTempClosestToZero();
+		assertEquals(expResult, actualResult, 0.00001);
+	}
+	
+	@Test
 	public void testFindTemperatureClosestToZeroIfOneElement() {
 	    double[] temperatureSeries = {1};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
@@ -157,6 +166,16 @@ public class TemperatureSeriesAnalysisTest {
 		double value = 2;
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double expResult = 2.2;
+		double actualResult = seriesAnalysis.findTempClosestToValue(value);
+		assertEquals(expResult,actualResult, 0.0001);
+	}
+	
+	@Test 
+	public void testFindTemperatureClosestToValueMoreNumbers() {
+		double[] temperatureSeries = {1, 2.2, 1.8, 3, -221, 1.999, 2.0011, 2.001};
+		double value = 2;
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		double expResult = 2.001;
 		double actualResult = seriesAnalysis.findTempClosestToValue(value);
 		assertEquals(expResult,actualResult, 0.0001);
 	}

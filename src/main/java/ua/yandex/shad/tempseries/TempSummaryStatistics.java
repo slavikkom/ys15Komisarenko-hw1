@@ -7,19 +7,19 @@ public class TempSummaryStatistics {
     private double devTemp;
 
     public TempSummaryStatistics() {
-		setMaxTemp(0);
-		setMinTemp(0);
-		setAvgTemp(0);
-		setDevTemp(0);
+        setMaxTemp(0);
+        setMinTemp(0);
+        setAvgTemp(0);
+        setDevTemp(0);
 	} 
 	
-	public TempSummaryStatistics(double[] temperatureSeries) {
+    public TempSummaryStatistics(double[] temperatureSeries) {
         if (temperatureSeries.length == 0) { 
-			throw new IllegalArgumentException();
-		}
-		TemperatureSeriesAnalysis seriesAnalysis = 
-		new TemperatureSeriesAnalysis(temperatureSeries);
-		setMaxTemp(seriesAnalysis.max());
+            throw new IllegalArgumentException();
+        }
+        TemperatureSeriesAnalysis seriesAnalysis = 
+        new TemperatureSeriesAnalysis(temperatureSeries);
+        setMaxTemp(seriesAnalysis.max());
 		setMinTemp(seriesAnalysis.min());
 		setAvgTemp(seriesAnalysis.average());
 		setDevTemp(seriesAnalysis.devitation());
