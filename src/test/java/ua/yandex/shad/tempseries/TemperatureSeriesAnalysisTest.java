@@ -218,11 +218,21 @@ public class TemperatureSeriesAnalysisTest {
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
-	public void testAddTempsIfEmpty() {
+	public void testAddTempsIfTempsLowThenBottom() {
 		double[] temperatureSeries = {1, 2};
 		double[] temperetures = {-274, 2, 3};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		seriesAnalysis.addTemps(temperetures);
+	}
+	
+	@Test 
+	public void testAddTemps() {
+		double[] temperatureSeries = {2, 234, 0.23};
+		double[] temperetures = {-273.14, 2, 3};
+		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
+		seriesAnalysis.addTemps(temperetures);
+		double[] expResult = {2, 234, 0.23, -273.14, 2, 3};
+		assertArrayEquals(expResult, seriesAnalysis.getTemps(), 0.0001);
 	}
 	
 	@Test
@@ -328,7 +338,7 @@ public class TemperatureSeriesAnalysisTest {
 	public void testConstructorWithoutPar() {
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis();
 		int expResult = 0;
-		int actualResult = seriesAnalysis.GetTemps().length;
+		int actualResult = seriesAnalysis.getTemps().length;
 		assertEquals(expResult, actualResult);
 	}
 	
@@ -342,6 +352,6 @@ public class TemperatureSeriesAnalysisTest {
 	public void testConstructorWithPar() {
 		double[] temperatureSeries = {1.0, 2.0, 0.0, -1.0, 4};
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-		assertArrayEquals(temperatureSeries, seriesAnalysis.GetTemps(), 0.0001);
+		assertArrayEquals(temperatureSeries, seriesAnalysis.getTemps(), 0.0001);
 	}
 }

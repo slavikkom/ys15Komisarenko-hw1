@@ -6,7 +6,7 @@ public class TempSummaryStatistics {
     private double avgTemp;
     private double devTemp;
 
-	public TempSummaryStatistics() {
+    public TempSummaryStatistics() {
 		setMaxTemp(0);
 		setMinTemp(0);
 		setAvgTemp(0);
@@ -14,7 +14,7 @@ public class TempSummaryStatistics {
 	} 
 	
 	public TempSummaryStatistics(double[] temperatureSeries) {
-		if (temperatureSeries.length == 0) { 
+        if (temperatureSeries.length == 0) { 
 			throw new IllegalArgumentException();
 		}
 		TemperatureSeriesAnalysis seriesAnalysis = 
