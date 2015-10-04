@@ -172,7 +172,7 @@ public class TemperatureSeriesAnalysisTest {
 	
 	@Test 
 	public void testFindTemperatureClosestToValueMoreNumbers() {
-		double[] temperatureSeries = {1, 2.2, 1.8, 3, -221, 1.999, 2.0011, 2.001};
+		double[] temperatureSeries = {1, 2.2, 1.8, 3, -221, 1.999, 2.0011, 2.001, 1.8999};
 		double value = 2;
 		TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
 		double expResult = 2.001;
