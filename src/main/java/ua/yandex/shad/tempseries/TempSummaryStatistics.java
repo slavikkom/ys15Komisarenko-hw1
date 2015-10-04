@@ -25,21 +25,21 @@ public class TempSummaryStatistics {
 		setDevTemp(seriesAnalysis.devitation());
 	}
 	
-	/*public void setMaxTemp(double a) {
+	private void setMaxTemp(double a) {
 		this.maxTemp = a;
 	}
 	
-	public void setMinTemp(double a) {
+	private void setMinTemp(double a) {
 		this.minTemp = a;
 	}
 	
-	public void setAvgTemp(double a) {
+	private void setAvgTemp(double a) {
 		this.avgTemp = a;
 	}
 	
-	public void setDevTemp(double a) {
+	private void setDevTemp(double a) {
 		this.devTemp = a;
-	}*/
+	}
 	
 	public double getMinTemp() {
 		return this.minTemp;
