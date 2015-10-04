@@ -20,9 +20,9 @@ public class TempSummaryStatistics {
         TemperatureSeriesAnalysis seriesAnalysis = 
         new TemperatureSeriesAnalysis(temperatureSeries);
         setMaxTemp(seriesAnalysis.max());
-		setMinTemp(seriesAnalysis.min());
-		setAvgTemp(seriesAnalysis.average());
-		setDevTemp(seriesAnalysis.devitation());
+        setMinTemp(seriesAnalysis.min());
+        setAvgTemp(seriesAnalysis.average());
+        setDevTemp(seriesAnalysis.devitation());
 	}
 	
     private void setMaxTemp(double a) {
